@@ -28,7 +28,6 @@ export default {
         app: "NatureGems",
         vendor: ""
       },
-
       routes: [
         {
           icon: "home",

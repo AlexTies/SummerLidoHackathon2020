@@ -13,7 +13,6 @@
         {{ category.label }}
       </div>
     </router-link>
-
   </div>
 </template>
 

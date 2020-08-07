@@ -1,10 +1,10 @@
 <template>
   <div class="mgm-scroll-container">
-  <picoftheday />
-  <h2>Categories</h2>
+    <picoftheday />
+    <h2>Categories</h2>
     <categories />
     <h2>Places</h2>
-    <placeslist v-bind:places="places.reccomended" />
+    <placeslist v-bind:places="places.recommended" />
   </div>
 </template>
 
