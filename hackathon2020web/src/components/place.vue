@@ -4,6 +4,7 @@
     <div class="ngm-potd__content">
       <div class="ngm-potd__text">
         <div class="ngm-potd__label" v-if="placeofday === 'true'">PLACE OF THE DAY</div>
+        <div class="ngm-potd__label" v-if="picoftheday === 'true'">PICTURE OF THE DAY</div>
         <div class="ngm-potd__title">
           {{ placedata.name }}
         </div>
@@ -23,7 +24,7 @@
 <script>
 export default {
   name: "place",
-  props: ['place', 'size', 'placeofday'],
+  props: ['place', 'size', 'placeofday', 'picoftheday'],
   data: function () {
     return {}
   },

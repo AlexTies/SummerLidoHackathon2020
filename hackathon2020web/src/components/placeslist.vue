@@ -1,6 +1,6 @@
 <template>
   <div class="ngm-placeslist">
-    <place v-for="place in places" v-bind:place="place.id" size="-medium" placeofday="false"/>
+    <place v-for="place in places" v-bind:place="place.id" size="-medium" placeofday="false" picoftheday="false"/>
   </div>
 </template>
 

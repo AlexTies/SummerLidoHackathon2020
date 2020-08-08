@@ -71,6 +71,7 @@ body {
 .ngm-main {
   overflow-y: auto;
   overflow-x: hidden;
+  padding-bottom: 80px;
 }
 
 .ngm-header {

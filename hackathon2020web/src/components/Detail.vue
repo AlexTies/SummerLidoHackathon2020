@@ -74,6 +74,10 @@
           <b>{{ challange.addpoints }} Pts.</b>
         </div>
       </div>
+      <a href="https://www.instagram.com/explore/tags/" class="ngm-detail__more">
+        <span>See who participates in this Challange</span>
+          <i class="material-icons">navigate_next</i>
+      </a>
     </div>
 
 
@@ -116,6 +120,7 @@ export default {
   background-color: white;
   box-shadow: 0 0 5px #00000033;
   z-index: 1000;
+  overflow: auto;
   &__image-container {
     height: 260px;
     position: relative;
@@ -188,6 +193,18 @@ export default {
     flex: 1;
     max-width: 800px;
     margin: 0 auto;
+  }
+  &__more {
+    display: flex;
+    padding-bottom: 10px;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+    i {
+    }
+    span {
+      text-decoration: underline;
+    }
   }
   &__paragraph {
     color: gray;

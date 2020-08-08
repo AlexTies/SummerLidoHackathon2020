@@ -1,6 +1,8 @@
 <template>
   <div class="mgm-scroll-container">
-    <place v-bind:place="places.dayly" size="-big" placeofday="true"/>
+    <place v-bind:place="places.dayly" size="-big" placeofday="true" picoftheday="false"/>
+    <place v-bind:place="places.picoftheday" size="-big" placeofday="false" picoftheday="true"/>
+
     <h2>Categories</h2>
     <categories />
     <h2>Recommended Places</h2>
@@ -18,6 +20,7 @@ export default {
     return {
       places: {
         dayly: "ab1",
+        picoftheday: "ab5",
         all: window.locationdata
       }
     }
