@@ -100,7 +100,6 @@ export default {
     fullprice: function () {
       let price = 0.0;
       this.placedata.prices.forEach(function (x) {
-        console.log(x);
         price += x.price;
       });
 

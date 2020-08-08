@@ -1,5 +1,26 @@
 <template>
   <router-link v-bind:to="'/detail/' + place" class="ngm-potd" v-bind:class="'--size' + size">
+    <div class="ngm-potd__available">
+      <div class="ngm-potd__available-item --color-violett"
+        v-if="placedata.categories.includes('bike')"
+      >
+        <i class="material-icons">pedal_bike</i>
+      </div>
+      <div class="ngm-potd__available-item --color-green"
+           v-if="placedata.categories.includes('hike')"
+      >
+        <i class="material-icons">
+          directions_walk
+        </i>
+      </div>
+      <div class="ngm-potd__available-item --color-blue"
+           v-if="placedata.categories.includes('car')"
+      >
+        <i class="material-icons">
+          directions_car
+        </i>
+      </div>
+    </div>
     <img class="ngm-potd__image" v-bind:src="'https://www.ucp.me/data/img/' + placedata.image">
     <div class="ngm-potd__content">
       <div class="ngm-potd__text">
@@ -35,7 +56,6 @@ export default {
     fullprice: function () {
       let price = 0.0;
       this.placedata.prices.forEach(function (x) {
-        console.log(x);
         price += x.price;
       });
 
@@ -119,6 +139,34 @@ export default {
 
   &__annot > :first-child {
     border-top-left-radius: 8px;
+  }
+  &__available {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    > :first-child {
+      border-bottom-left-radius: 10px;
+    }
+  }
+  &__available-item {
+    padding: 2px 6px;
+    &.--color-red {
+      background-color: #f44336;
+      color: white;
+    }
+    &.--color-blue {
+      background-color: #2196f3;
+      color: white;
+    }
+    &.--color-green {
+      background-color: #8bc34a;
+      color: white;
+    }
+    &.--color-violett {
+      background-color: #8e24aa;
+      color: white;
+    }
   }
 }
 

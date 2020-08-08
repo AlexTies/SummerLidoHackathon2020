@@ -29,8 +29,4 @@ export default {
 </script>
 
 <style lang="scss">
-.ngm-placeslist {
-  display: flex;
-  flex-wrap: wrap;
-}
 </style>

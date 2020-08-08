@@ -85,4 +85,12 @@ export default {
     font-size: 50px;
   }
 }
+h2 {
+  margin: 10px 15px 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: gray;
+  font-weight: normal;
+}
 </style>

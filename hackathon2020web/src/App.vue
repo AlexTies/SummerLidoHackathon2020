@@ -56,6 +56,11 @@ export default {
 <style lang="scss">
 body {
   font-family: 'Roboto', sans-serif;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .ngm-container {
@@ -141,10 +146,8 @@ body {
 
 body {
   margin: 0;
-  height: 100vh;
   @media screen and (min-width: 720px) {
     margin-top: 50px;
-    height: calc(100vh - 50px);
   }
 }
 </style>
