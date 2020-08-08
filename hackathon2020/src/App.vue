@@ -11,7 +11,7 @@
       <router-view/>
     </main>
     <nav class="ngm-menu">
-      <router-link v-bind:to="route.slug" class="ngm-menu__item" v-for="route in routes">
+      <router-link v-bind:to="route.slug" class="ngm-menu__item" v-for="route in routes" v-bind:class="'--color' + route.color">
         <div class="ngm-menu__icon material-icons">{{ route.icon }}</div>
         <div class="ngm-menu__label">{{ route.label }}</div>
       </router-link>
@@ -32,17 +32,20 @@ export default {
         {
           icon: "home",
           slug: "/",
-          label: "Home"
+          label: "Home",
+          color: "-blue"
         },
         {
           icon: "favorite",
-          slug: "/rewars",
-          label: "Rewards"
+          slug: "/rewards",
+          label: "Rewards",
+          color: "-yellow"
         },
         {
           icon: "map",
           slug: "/maps",
-          label: "Map"
+          label: "Map",
+          color: "-red"
         }
       ]
     }
@@ -51,43 +54,96 @@ export default {
 </script>
 
 <style lang="scss">
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .ngm-container {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  @media screen and (min-width: 720px) {
+    display: block;
+  }
 }
+
 .ngm-main {
   overflow-y: auto;
   overflow-x: hidden;
 }
+
 .ngm-header {
   height: 48px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
+  font-weight: bold;
   padding: 0 20px;
   box-shadow: 0 0 2px #00000033;
+  @media screen and (min-width: 720px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: end;
+    font-weight: bold;
+    font-size: 26px;
+    box-shadow: none;
+    background: linear-gradient(180deg, white 0%, #ffffffcc 40%, transparent 100%);
+    z-index: 10;
+    height: 65px;
+    pointer-events: none;
+  }
 }
+
 .ngm-menu {
-  height: 48px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 20px;
   box-shadow: 0 0 2px #00000033;
+  background-color: white;
+  @media screen and (min-width: 720px) {
+    position: fixed;
+    bottom: 30px;
+    left: 20px;
+    border-radius: 10px;
+    padding: 0;
+  }
 
   &__item {
     text-align: center;
-    margin: 0 10px;
-    line-height: 0.9;
+    padding: 0 10px;
+    line-height: 1;
+    text-decoration: none;
+    min-width: 40px;
+    &.--color-red {
+      color: #f44336;
+    }
+    &.--color-blue {
+      color: #2196f3;
+    }
+    &.--color-green {
+      color: #8bc34a;
+    }
+    &.--color-yellow {
+      color: #fbc02d;
+    }
   }
 
   &__label {
     font-size: 14px;
   }
 }
+
 body {
   margin: 0;
+  height: 100vh;
+  @media screen and (min-width: 720px) {
+    margin-top: 50px;
+    height: calc(100vh - 50px);
+  }
 }
 </style>

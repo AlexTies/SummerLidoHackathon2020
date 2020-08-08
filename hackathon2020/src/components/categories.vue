@@ -1,18 +1,19 @@
 <template>
   <div class="ngm-categories-list">
-    <router-link class="ngm-categories__item"
+    <div class="ngm-categories-list__track">
+      <router-link class="ngm-categories-list__item"
          v-for="category in categories"
          v-bind:to="category.slug"
-    >
-      <div class="ngm-categories-list__icon material-icons"
-           v-bind:class="category.color"
+         v-bind:class="category.color"
       >
-        {{ category.icon }}
-      </div>
-      <div class="ngm-categories-list__label">
-        {{ category.label }}
-      </div>
-    </router-link>
+        <div class="ngm-categories-list__icon material-icons">
+          {{ category.icon }}
+        </div>
+        <div class="ngm-categories-list__label">
+          {{ category.label }}
+        </div>
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -35,9 +36,9 @@ export default {
           color: "--green"
         },
         {
-          icon: "waves",
-          label: "Swim",
-          slug: "activities/swim",
+          icon: "directions_car",
+          label: "Car",
+          slug: "activities/car",
           color: "--blue"
         }
       ]
@@ -48,9 +49,40 @@ export default {
 
 <style lang="scss">
 .ngm-categories-list {
-  &__icon {
+  overflow: auto;
 
-    font-size: 72px;
+  &__track {
+    display: inline-flex;
+    padding: 10px 0;
+    margin: 0 10px;
+  }
+
+  &__item {
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+    margin: 0 5px;
+    text-decoration: none;
+    padding: 30px 20px 20px;
+    font-size: 24px;
+    position: relative;
+    font-weight: bold;
+    &.--violett {
+      color: #8e24aa;
+    }
+    &.--green {
+      color: #4caf50;
+    }
+    &.--blue {
+      color: #1e88e5;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    font-size: 50px;
   }
 }
 </style>
